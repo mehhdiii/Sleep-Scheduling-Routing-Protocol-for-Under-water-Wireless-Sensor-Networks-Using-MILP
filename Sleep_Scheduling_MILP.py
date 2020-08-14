@@ -604,7 +604,7 @@ def Optimize(rad, sen):
                 if(counter_temp!=0):
                     srpfile.write("Relay: "+ str(j) + " has "+ str(counting)+ " active sensors out of "+ str(len(s_counter[j]) -2)+ " sensors\n")
                     # print("Relay: ", j , " has ", counting, " active sensors out of ", len(s_counter[j]) -2, " sensors")
-        else:
+        else if:
             srpfile.write("Oil Detected in Round: "+ str(round)+" "+str(len(x.nodes)-1) +"\n")
             print("Oil Detected in Round: ", round+len(x.nodes)-1)
             #turn on all sensors in the oil detected relays:
@@ -757,11 +757,11 @@ def Optimize(rad, sen):
             file.write(strings)
 
             ##at round 100 spill oil:
-            if(round==30):
+            if(round==5):
                 oil_simulator(Fin_Conn_S_R, sensorList, PH_list_sensors)
 
                 print("Spilling oil")
-            if(round== 30+len(x.nodes) - 1):
+            if(round== 5+len(x.nodes) - 1):
                 reset_oil(sensorList, PH_list_sensors)
 
             if( dead_s_pc > 90 or dead_r_pc >90):
@@ -813,7 +813,7 @@ def Optimize(rad, sen):
 
 
 
-k =100
+k =40
 radius = 30
 relay, energy = Optimize(radius, k)
 print('Radius =', radius,  ', Sensors = ', k)
